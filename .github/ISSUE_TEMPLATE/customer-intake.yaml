@@ -1,0 +1,28 @@
+name: Customer intake (HydraSafe)
+description: Capture a HydraSafe lead request (public-safe)
+title: "[HydraSafe Intake] "
+labels: ["intake"]
+body:
+  - type: input
+    attributes:
+      label: Customer / Org name
+      placeholder: "Optional if public"
+    validations:
+      required: false
+  - type: dropdown
+    attributes:
+      label: Request type
+      options:
+        - Permit packet framework
+        - Commissioning checklist/evidence index
+        - Inspection checklist package
+        - Incident response package
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Notes (public-safe)
+      description: Keep sensitive site details out of public issues.
+    validations:
+      required: true
