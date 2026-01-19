@@ -1,0 +1,16 @@
+name: Compliance question
+description: Template to capture AHJ/compliance questions
+title: "[Compliance] "
+labels: ["compliance"]
+body:
+  - type: textarea
+    attributes:
+      label: Question
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Context (non-sensitive)
+      description: No addresses, inventories, or facility specifics in public issues.
+    validations:
+      required: true
