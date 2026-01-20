@@ -1,4 +1,4 @@
-name: StegBrain Ops Agent
+name: StegBrain (advisory)
 
 on:
   issues:
@@ -16,20 +16,66 @@ permissions:
 jobs:
   stegbrain:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: Checkout this repo
         uses: actions/checkout@v4
+
+      - name: Checkout StegBrain
+        uses: actions/checkout@v4
+        with:
+          repository: StegVerse-labs/StegBrain
+          path: stegbrain-lib
+
+      - name: Checkout DiamondOps-Core
+        uses: actions/checkout@v4
+        with:
+          repository: StegVerse-labs/DiamondOps-Core
+          path: core
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: |
-          pip install jsonschema pyyaml
+      - name: Install deps
+        run: pip install jsonschema
 
-      - name: Run StegBrain
+      - name: Run StegBrain (build comment)
         run: |
-          python stegbrain/stegbrain.py
+          STEGBRAIN_VERSION="$(cat stegbrain-lib/VERSION 2>/dev/null || echo 0.1.0)"
+          echo "StegBrain: $STEGBRAIN_VERSION"
+          python stegbrain-lib/stegbrain/run_github.py
+        env:
+          REPO_ROOT: .
+          CORE_DIR: ./core
+          CORE_VERSION: v0.3.x
+          STEGBRAIN_VERSION: 0.1.0
+          OUTPUT_PATH: ./stegbrain_output.json
+
+      - name: Post comment (Issue or PR)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const payload = JSON.parse(fs.readFileSync('./stegbrain_output.json', 'utf8'));
+            const body = payload.comment;
+
+            if (context.eventName === 'issues') {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body
+              });
+              return;
+            }
+
+            if (context.eventName === 'pull_request') {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                body
+              });
+              return;
+            }
