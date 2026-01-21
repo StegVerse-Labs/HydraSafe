@@ -34,7 +34,7 @@ HydraSafe does **not**:
 - replace regulatory authorities or inspectors
 - guarantee physical safety outcomes or performance
 
-HydraSafe produces **documentation and validation artifacts only**.  
+HydraSafe produces documentation and validation artifacts only and does not assume operational duty of care.  
 All physical responsibility remains with asset owners, OEMs, and contractors.
 
 ---
