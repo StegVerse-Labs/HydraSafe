@@ -1,0 +1,1 @@
+DiamondOps provides a documentation-first technical authority layer that validates the correctness of retrofit and operational configurations where regulatory requirements, hardware constraints, and operational intent intersect. DiamondOps does not manufacture, install, operate, or control physical equipment.
