@@ -61,12 +61,13 @@ HydraSafe outputs are validated against **DiamondOps-Core schemas** and surfaced
 ## Repository Structure
 
 Typical directories include:
-
+```
 examples/        # Example safety, permit, and incident records
 demo/            # Demonstration-only payloads
 meta/diamondops/ # DiamondOps-aligned metadata references
 .github/         # CI workflows (StegBrain advisory validation)
 stegbrain.allowlist
+```
 
 Only paths listed in `stegbrain.allowlist` are scanned by StegBrain.
 
@@ -95,8 +96,9 @@ HydraSafe operates under the DiamondOps liability model.
 > DiamondOps is responsible for the correctness of technical determinations and documentation produced under its schemas at the time of issuance. DiamondOps is not responsible for physical installation, operation, maintenance, or real-world performance of equipment.
 
 See the authoritative statement in:
-
+```
 DiamondOps-Core/LIABILITY_BOUNDARY.md
+```
 
 ---
 
