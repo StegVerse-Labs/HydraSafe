@@ -10,4 +10,4 @@ For customer, insurer, and regulator-facing proof of documentation-only posture 
 
 - `docs/EVIDENCE_PACK.md`
 - 
-> See: https://github.com/StegVerse-Labs/DiamondOps/docs/LIABILITY_BOUNDARY.md
+> See: https://github.com/StegVerse-Labs/DiamondOps-Core/docs/LIABILITY_BOUNDARY.md
