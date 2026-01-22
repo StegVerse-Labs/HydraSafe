@@ -6,8 +6,9 @@
 
 ## Evidence Pack
 
-For customer, insurer, and regulator-facing proof of documentation-only posture and canonical governance, see:
+For customer, insurer, and regulator-facing proof of documentation-only posture
+and canonical governance, see:
 
-- `docs/EVIDENCE_PACK.md`
+- docs/EVIDENCE_PACK.md
 - 
 > See: https://github.com/StegVerse-Labs/DiamondOps-Core/docs/LIABILITY_BOUNDARY.md
