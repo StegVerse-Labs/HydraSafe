@@ -7,7 +7,8 @@
 - **Canonical dependency:** `StegVerse-Labs/DiamondOps-Core`
 - **Product role:** Safety, permitting, commissioning, inspection, and incident-documentation layer for hydrogen and reactive-gas environments
 - **Posture:** Documentation-first; no physical control, installation, operation, or maintenance authority
-- **Current activation goal:** Establish the HydraSafe-specific product contract and DiamondOps integration boundary
+- **Completed goal:** Define and validate the HydraSafe artifact envelope
+- **Current activation goal:** Install framework templates and map validated exports for YieldOS ingestion
 
 ## Naming decision
 
@@ -40,9 +41,56 @@ DiamondOps-Core is authoritative for shared schemas, standards, governance, and 
 
 Canonical files synchronized into this repository are read-only downstream copies. Changes to those documents must originate in DiamondOps-Core and propagate through the approved synchronization path.
 
+## Installed product contract
+
+The following components are installed and committed:
+
+- `README.md` — product-facing DiamondOps boundary and naming rationale;
+- `hydrasafe.manifest.json` — machine-readable product identity, scope, authority, dependencies, and active goal;
+- `schemas/hydrasafe-artifact.schema.json` — HydraSafe documentation-artifact envelope;
+- `schemas/hydrasafe-event.schema.json` — lifecycle and integration event envelope;
+- `examples/artifacts/commissioning-checklist.example.json` — schema-valid boundary-safe artifact example;
+- `examples/events/artifact-created.example.json` — schema-valid event example;
+- `scripts/validate_repository.py` — schema plus semantic-policy validation;
+- `.github/workflows/validate-hydrasafe.yml` — automated repository validation;
+- `docs/EVIDENCE_PACK.md` — synchronized DiamondOps canonical evidence pack.
+
+## Artifact-envelope invariants
+
+Every HydraSafe artifact must identify:
+
+- artifact identity, class, and semantic version;
+- hazard domains and lifecycle stage;
+- project/facility scope without embedding unnecessary sensitive data;
+- issuer and documentation-only authority class;
+- required and completed external review posture;
+- DiamondOps-Core canonical references;
+- evidence references;
+- status and disposition;
+- creation/update timestamps;
+- integrity metadata;
+- explicit denial of physical-control, permit-issuance, and engineering-approval authority.
+
+A `complete` artifact is invalid unless its review posture is `externally-reviewed` or `superseded`. At least one DiamondOps-Core canonical reference is required by repository validation.
+
+## Event invariants
+
+HydraSafe events record:
+
+- event and artifact identity;
+- lifecycle event type;
+- actor and authority class;
+- source and destination;
+- previous-event hash and event hash;
+- event payload;
+- canonical references;
+- downstream receipt state when applicable.
+
+YieldOS acceptance must be represented by a separate downstream receipt or event. HydraSafe creation or export does not imply YieldOS acceptance or execution authority.
+
 ## Integration contract
 
-HydraSafe deliverables should be structured so DiamondOps services can identify:
+HydraSafe deliverables are structured so DiamondOps services can identify:
 
 - artifact type and version;
 - facility or project scope without embedding unnecessary sensitive data;
@@ -59,42 +107,61 @@ YieldOS ingestion remains a downstream consumer contract. HydraSafe defines expo
 
 ## Development sequence
 
-1. Replace the scaffold README with a product-facing repository contract.
-2. Add a machine-readable HydraSafe manifest aligned to DiamondOps-Core.
-3. Define artifact classes for permits, commissioning, inspections, incidents, and evidence exports.
-4. Add framework templates with explicit jurisdiction/OEM/qualified-professional review gates.
-5. Define YieldOS ingestion mapping and validation examples.
-6. Add repository validation that detects missing metadata, broken canonical references, and accidental edits to synchronized canonical files.
-7. Prepare a release candidate only after documentation boundaries, schemas, examples, and validation are complete.
+1. **Complete:** Replace the scaffold README with a product-facing repository contract.
+2. **Complete:** Add a machine-readable HydraSafe manifest aligned to DiamondOps-Core.
+3. **Complete:** Define and validate artifact and event envelopes.
+4. **Active:** Add framework templates with explicit jurisdiction/OEM/qualified-professional review gates.
+5. Define YieldOS ingestion mapping, receipt behavior, and validation examples.
+6. Extend validation to template metadata, broken canonical references, and synchronized-file protection.
+7. Add incident-response playbooks and evidence-export examples.
+8. Prepare a release candidate only after documentation boundaries, schemas, examples, and validation are complete.
 
 ## Known remaining files and modules
 
 Destination: `StegVerse-Labs/HydraSafe`
 
-- `hydrasafe.manifest.json`
-- `schemas/hydrasafe-artifact.schema.json`
-- `schemas/hydrasafe-event.schema.json`
-- `templates/permit-packet/`
-- `templates/commissioning/`
-- `templates/inspection/`
-- `playbooks/incident-response/`
+- `templates/permit-packet/README.md`
+- `templates/permit-packet/permit-packet.template.json`
+- `templates/commissioning/README.md`
+- `templates/commissioning/commissioning-checklist.template.json`
+- `templates/inspection/README.md`
+- `templates/inspection/inspection-checklist.template.json`
+- `playbooks/incident-response/README.md`
+- `playbooks/incident-response/initial-response.template.json`
 - `integrations/yieldos/INGESTION_SPEC.md`
-- `examples/`
-- repository validation workflow and scripts
+- `integrations/yieldos/yieldos-export.schema.json`
+- `examples/yieldos/`
+- canonical-reference reachability validation;
+- synchronized canonical-file modification protection.
 
 Potential canonical additions, only if absent and approved:
 
 Destination: `StegVerse-Labs/DiamondOps-Core`
 
-- shared artifact-envelope schema required by HydraSafe exports;
+- shared artifact-envelope schema if HydraSafe semantics are generalized across DiamondOps products;
 - canonical lifecycle/status vocabulary;
-- shared evidence-reference and integrity metadata conventions.
+- shared evidence-reference and integrity metadata conventions;
+- shared downstream receipt envelope.
 
 ## Ownership and continuation scope
 
 HydraSafe owns its domain-specific templates, playbooks, examples, mappings, and validation. DiamondOps-Core owns shared canonical definitions. YieldOS owns downstream ingestion behavior.
 
 Continuation is permitted within HydraSafe for product documentation, domain schemas, examples, validation, and integration mappings, provided no local change expands physical authority or contradicts DiamondOps-Core canonicals.
+
+## Validation and pending observation
+
+The repository workflow `.github/workflows/validate-hydrasafe.yml` runs the validator on pushes, pull requests, and manual dispatch. Its required checks are:
+
+- required continuity and canonical files exist;
+- manifest retains the DiamondOps parent, canonical dependency, documentation-only posture, and denied authority fields;
+- artifact and event examples satisfy Draft 2020-12 schemas;
+- artifact examples retain denied authority fields;
+- artifact scope declares that sensitive data is not embedded;
+- artifacts reference at least one DiamondOps-Core canonical;
+- complete artifacts carry an externally reviewed or superseded posture.
+
+A workflow result is an observation of the committed validator, not an expansion of HydraSafe authority.
 
 ## Release and ecosystem propagation
 
