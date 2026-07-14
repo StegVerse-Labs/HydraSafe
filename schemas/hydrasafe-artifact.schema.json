@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse-labs.github.io/HydraSafe/schemas/hydrasafe-artifact.schema.json",
+  "title": "HydraSafe Artifact Envelope",
+  "description": "Documentation-only envelope for HydraSafe safety, permitting, commissioning, inspection, incident-response, and evidence-export artifacts within DiamondOps.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_id",
+    "artifact_type",
+    "artifact_version",
+    "hazard_domain",
+    "lifecycle_stage",
+    "scope",
+    "issuer",
+    "review_posture",
+    "canonical_references",
+    "evidence_references",
+    "status",
+    "disposition",
+    "created_at",
+    "updated_at",
+    "integrity"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^hs-[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "artifact_type": {
+      "type": "string",
+      "enum": [
+        "permit-packet-framework",
+        "commissioning-checklist",
+        "inspection-checklist",
+        "incident-response-playbook",
+        "hazard-review",
+        "readiness-record",
+        "evidence-export"
+      ]
+    },
+    "artifact_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "hazard_domain": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "hydrogen",
+          "reactive-gas",
+          "pressure",
+          "ignition",
+          "ventilation",
+          "gas-detection",
+          "materials-compatibility",
+          "commissioning",
+          "inspection",
+          "incident-response"
+        ]
+      }
+    },
+    "lifecycle_stage": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "design-review",
+        "pre-commissioning",
+        "commissioning",
+        "operational-readiness",
+        "inspection",
+        "incident-response",
+        "post-incident-review",
+        "decommissioning",
+        "archived"
+      ]
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project_id", "facility_reference", "system_boundary"],
+      "properties": {
+        "project_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "facility_reference": {"type": "string", "minLength": 1, "maxLength": 256},
+        "system_boundary": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "jurisdiction": {"type": ["string", "null"], "maxLength": 256},
+        "sensitive_data_embedded": {"const": false}
+      }
+    },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organization", "role", "authority_class"],
+      "properties": {
+        "organization": {"type": "string", "minLength": 1, "maxLength": 256},
+        "role": {"type": "string", "minLength": 1, "maxLength": 128},
+        "authority_class": {
+          "type": "string",
+          "enum": ["documentation-author", "schema-validator", "evidence-exporter"]
+        }
+      }
+    },
+    "review_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "required_roles", "completed_reviews"],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": ["draft", "review-required", "partially-reviewed", "externally-reviewed", "superseded"]
+        },
+        "required_roles": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "authority-having-jurisdiction",
+              "qualified-professional",
+              "oem",
+              "asset-owner",
+              "installer",
+              "operator"
+            ]
+          }
+        },
+        "completed_reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "reviewer_reference", "reviewed_at", "result"],
+            "properties": {
+              "role": {"type": "string"},
+              "reviewer_reference": {"type": "string", "minLength": 1},
+              "reviewed_at": {"type": "string", "format": "date-time"},
+              "result": {"type": "string", "enum": ["accepted", "accepted-with-conditions", "rejected", "informational"]},
+              "evidence_reference": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    },
+    "canonical_references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/reference"}
+    },
+    "evidence_references": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/reference"}
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "active", "blocked", "complete", "superseded", "withdrawn", "archived"]
+    },
+    "disposition": {
+      "type": "string",
+      "enum": ["informational", "review-required", "ready-for-external-review", "accepted", "accepted-with-conditions", "rejected", "superseded", "not-applicable"]
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "content_digest", "canonicalization", "payload_included"],
+      "properties": {
+        "algorithm": {"const": "sha256"},
+        "content_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "canonicalization": {"type": "string", "enum": ["jcs-rfc8785", "utf8-byte-exact"]},
+        "payload_included": {"type": "boolean"},
+        "signature_reference": {"type": ["string", "null"]}
+      }
+    },
+    "payload": {
+      "type": ["object", "array", "string", "number", "boolean", "null"]
+    },
+    "authority_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physical_control", "permit_issuance", "engineering_approval"],
+      "properties": {
+        "physical_control": {"const": false},
+        "permit_issuance": {"const": false},
+        "engineering_approval": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference_type", "identifier"],
+      "properties": {
+        "reference_type": {"type": "string", "enum": ["diamondops-canonical", "external-standard", "evidence", "oem-document", "jurisdictional-source", "related-artifact"]},
+        "identifier": {"type": "string", "minLength": 1, "maxLength": 2048},
+        "digest": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "retrieved_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "complete"}}},
+      "then": {
+        "properties": {
+          "review_posture": {
+            "properties": {
+              "state": {"enum": ["externally-reviewed", "superseded"]}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"required": ["authority_boundary"]},
+      "then": {
+        "properties": {
+          "authority_boundary": {
+            "properties": {
+              "physical_control": {"const": false},
+              "permit_issuance": {"const": false},
+              "engineering_approval": {"const": false}
+            }
+          }
+        }
+      }
+    }
+  ]
+}
