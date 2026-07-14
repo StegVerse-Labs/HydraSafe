@@ -1,0 +1,35 @@
+{
+  "event_id": "hse-demo-created-001",
+  "event_type": "artifact-created",
+  "event_version": "0.1.0",
+  "artifact_id": "hs-demo-commissioning-001",
+  "occurred_at": "2026-07-14T00:00:00Z",
+  "actor": {
+    "organization": "StegVerse-Labs",
+    "role": "HydraSafe documentation author",
+    "authority_class": "documentation-author"
+  },
+  "source": {
+    "system": "HydraSafe",
+    "repository": "StegVerse-Labs/HydraSafe",
+    "path": "examples/artifacts/commissioning-checklist.example.json"
+  },
+  "destination": {
+    "system": "HydraSafe",
+    "relationship": "local-record"
+  },
+  "previous_event_hash": null,
+  "event_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "payload": {
+    "status": "draft",
+    "disposition": "review-required"
+  },
+  "canonical_references": [
+    "StegVerse-Labs/DiamondOps-Core/docs/LIABILITY_BOUNDARY.md"
+  ],
+  "receipt": {
+    "required": false,
+    "status": "not-required",
+    "receipt_reference": null
+  }
+}
