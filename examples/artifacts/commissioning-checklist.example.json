@@ -1,0 +1,83 @@
+{
+  "artifact_id": "hs-demo-commissioning-001",
+  "artifact_type": "commissioning-checklist",
+  "artifact_version": "0.1.0",
+  "hazard_domain": [
+    "hydrogen",
+    "pressure",
+    "ventilation",
+    "gas-detection",
+    "commissioning"
+  ],
+  "lifecycle_stage": "pre-commissioning",
+  "scope": {
+    "project_id": "demo-project-001",
+    "facility_reference": "redacted-demo-facility",
+    "system_boundary": "Hydrogen storage, regulated supply, ventilation, and gas-detection documentation boundary.",
+    "jurisdiction": null,
+    "sensitive_data_embedded": false
+  },
+  "issuer": {
+    "organization": "StegVerse-Labs",
+    "role": "HydraSafe documentation author",
+    "authority_class": "documentation-author"
+  },
+  "review_posture": {
+    "state": "review-required",
+    "required_roles": [
+      "authority-having-jurisdiction",
+      "qualified-professional",
+      "oem",
+      "asset-owner",
+      "installer",
+      "operator"
+    ],
+    "completed_reviews": []
+  },
+  "canonical_references": [
+    {
+      "reference_type": "diamondops-canonical",
+      "identifier": "StegVerse-Labs/DiamondOps-Core/docs/LIABILITY_BOUNDARY.md",
+      "digest": null,
+      "retrieved_at": null
+    },
+    {
+      "reference_type": "diamondops-canonical",
+      "identifier": "StegVerse-Labs/DiamondOps-Core/docs/EVIDENCE_PACK.md",
+      "digest": null,
+      "retrieved_at": null
+    }
+  ],
+  "evidence_references": [],
+  "status": "draft",
+  "disposition": "review-required",
+  "created_at": "2026-07-14T00:00:00Z",
+  "updated_at": "2026-07-14T00:00:00Z",
+  "integrity": {
+    "algorithm": "sha256",
+    "content_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "canonicalization": "jcs-rfc8785",
+    "payload_included": true,
+    "signature_reference": null
+  },
+  "authority_boundary": {
+    "physical_control": false,
+    "permit_issuance": false,
+    "engineering_approval": false
+  },
+  "payload": {
+    "checklist_title": "Pre-commissioning documentation readiness",
+    "items": [
+      {
+        "id": "DOC-001",
+        "description": "Applicable OEM documentation has been identified for external review.",
+        "state": "open"
+      },
+      {
+        "id": "DOC-002",
+        "description": "Jurisdiction-specific requirements remain assigned to the authority having jurisdiction and qualified professionals.",
+        "state": "open"
+      }
+    ]
+  }
+}
