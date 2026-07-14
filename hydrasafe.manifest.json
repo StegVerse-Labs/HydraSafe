@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "manifest_type": "diamondops.product",
+  "manifest_version": "0.1.0",
+  "product": {
+    "name": "HydraSafe",
+    "repository": "StegVerse-Labs/HydraSafe",
+    "parent_ecosystem": "DiamondOps",
+    "canonical_dependency": "StegVerse-Labs/DiamondOps-Core",
+    "role": "safety-permitting-documentation-layer",
+    "posture": "documentation-only"
+  },
+  "domains": [
+    "hydrogen",
+    "reactive-gas",
+    "pressure",
+    "ignition",
+    "ventilation",
+    "gas-detection",
+    "materials-compatibility",
+    "commissioning",
+    "inspection",
+    "incident-response"
+  ],
+  "artifact_classes": [
+    "permit-packet-framework",
+    "commissioning-checklist",
+    "inspection-checklist",
+    "incident-response-playbook",
+    "hazard-review",
+    "readiness-record",
+    "evidence-export"
+  ],
+  "authority": {
+    "physical_control": false,
+    "installation": false,
+    "operation": false,
+    "maintenance": false,
+    "permit_issuance": false,
+    "engineering_approval": false,
+    "documentation_generation": true,
+    "schema_validation": true,
+    "evidence_export": true
+  },
+  "required_external_review_roles": [
+    "authority-having-jurisdiction",
+    "qualified-professional",
+    "oem",
+    "asset-owner",
+    "installer",
+    "operator"
+  ],
+  "integration_targets": [
+    {
+      "name": "DiamondOps-Core",
+      "relationship": "canonical-source",
+      "authority": "shared-schemas-standards-governance-liability"
+    },
+    {
+      "name": "YieldOS",
+      "relationship": "downstream-consumer",
+      "authority": "ingestion-and-consumer-behavior"
+    },
+    {
+      "name": "StegDB",
+      "relationship": "canonical-propagation",
+      "authority": "sync-and-enforcement"
+    }
+  ],
+  "required_artifact_metadata": [
+    "artifact_id",
+    "artifact_type",
+    "artifact_version",
+    "hazard_domain",
+    "lifecycle_stage",
+    "scope",
+    "issuer",
+    "review_posture",
+    "canonical_references",
+    "evidence_references",
+    "status",
+    "disposition",
+    "created_at",
+    "updated_at",
+    "integrity"
+  ],
+  "handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
+  "canonical_evidence_pack": "docs/EVIDENCE_PACK.md",
+  "release_state": "pre-alpha",
+  "active_goal": "define-and-validate-hydrasafe-artifact-envelope"
+}
