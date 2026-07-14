@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse-labs.github.io/HydraSafe/schemas/hydrasafe-event.schema.json",
+  "title": "HydraSafe Event",
+  "description": "Event envelope for lifecycle changes to HydraSafe documentation artifacts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "event_type",
+    "event_version",
+    "artifact_id",
+    "occurred_at",
+    "actor",
+    "source",
+    "destination",
+    "previous_event_hash",
+    "event_hash",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^hse-[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "artifact-created",
+        "artifact-updated",
+        "review-requested",
+        "review-recorded",
+        "status-changed",
+        "export-created",
+        "ingestion-submitted",
+        "ingestion-accepted",
+        "ingestion-rejected",
+        "artifact-superseded",
+        "artifact-archived"
+      ]
+    },
+    "event_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^hs-[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "occurred_at": {"type": "string", "format": "date-time"},
+    "actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organization", "role", "authority_class"],
+      "properties": {
+        "organization": {"type": "string", "minLength": 1},
+        "role": {"type": "string", "minLength": 1},
+        "authority_class": {
+          "type": "string",
+          "enum": [
+            "documentation-author",
+            "schema-validator",
+            "evidence-exporter",
+            "external-reviewer",
+            "downstream-consumer"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "repository"],
+      "properties": {
+        "system": {"type": "string", "minLength": 1},
+        "repository": {"type": "string", "minLength": 1},
+        "path": {"type": ["string", "null"]}
+      }
+    },
+    "destination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "relationship"],
+      "properties": {
+        "system": {"type": "string", "minLength": 1},
+        "relationship": {
+          "type": "string",
+          "enum": ["local-record", "canonical-reference", "downstream-ingestion", "evidence-export", "archive"]
+        }
+      }
+    },
+    "previous_event_hash": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "event_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "canonical_references": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "default": []
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "status"],
+      "properties": {
+        "required": {"type": "boolean"},
+        "status": {"type": "string", "enum": ["not-required", "pending", "accepted", "rejected", "failed"]},
+        "receipt_reference": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
