@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "profile_id": "hydrasafe-federal-floor-plus-v0.1",
+  "version": "0.1.0",
+  "status": "required",
+  "owner_repository": "StegVerse-Labs/HydraSafe",
+  "canonical_dependency": "StegVerse-Labs/DiamondOps-Core",
+  "policy": "Applicable federal security requirements are the minimum floor; HydraSafe must exceed them where technically and operationally feasible.",
+  "certification_claims": {
+    "fisma_authorized": false,
+    "fedramp_authorized": false,
+    "cmmc_certified": false,
+    "federal_compliance_attested": false
+  },
+  "reference_baselines": [
+    "NIST-SP-800-53-Rev5",
+    "NIST-SP-800-82-Rev3",
+    "NIST-SP-800-171-Rev3-when-applicable",
+    "FIPS-140-3-when-required",
+    "CISA-Secure-by-Design",
+    "CISA-Cross-Sector-CPGs"
+  ],
+  "required_control_domains": [
+    "data-classification-and-minimization",
+    "fail-closed-intake",
+    "least-privilege",
+    "separation-of-duties",
+    "multi-factor-authentication",
+    "cryptographic-protection",
+    "provenance-and-integrity",
+    "secure-by-default-delivery",
+    "ot-safety-separation",
+    "logging-and-detection",
+    "vulnerability-management",
+    "incident-response-and-recovery",
+    "supplier-and-integration-assurance",
+    "claim-collision-and-expiration"
+  ],
+  "prohibited_states": [
+    "implicit-success-without-evidence",
+    "unclassified-sensitive-intake",
+    "public-customer-data",
+    "shared-credentials",
+    "unbounded-machine-token",
+    "hydrasafe-operational-control",
+    "export-treated-as-ingestion",
+    "ingestion-treated-as-operational-authorization",
+    "release-with-missing-security-evidence"
+  ],
+  "allowed_task_states": [
+    "COMPLETE",
+    "BLOCKED",
+    "RETRY",
+    "REVIEW_REQUIRED",
+    "FAILED",
+    "CLAIMED",
+    "SUPERSEDED",
+    "MERGED"
+  ],
+  "release_gate": {
+    "fail_closed": true,
+    "requires": [
+      "applicability",
+      "implementation_location",
+      "owner",
+      "validation_procedure",
+      "evidence_reference",
+      "exception_expiration",
+      "next_review_date"
+    ]
+  }
+}
