@@ -1,8 +1,8 @@
 {
-  "registry_version": "0.1.0",
+  "registry_version": "0.2.0",
   "repository": "StegVerse-Labs/HydraSafe",
   "branch": "main",
-  "updated_at": "2026-08-02T17:48:00-05:00",
+  "updated_at": "2026-08-02T19:32:00-05:00",
   "canonical_handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
   "tasks": [
     {
@@ -22,21 +22,30 @@
     {
       "task_id": "HYDRA-SEC-001",
       "originating_goal": "Make federal security requirements the minimum floor and exceed them.",
-      "owner": "StegVerse-Labs/HydraSafe repository-native security lane",
-      "role": "security-integration-and-validation",
-      "claim_state": "CLAIMED",
-      "claimed_at": "2026-08-02T17:48:00-05:00",
-      "claim_expires_at": "2026-08-09T17:48:00-05:00",
+      "owner": "StegVerse-Labs/HydraSafe .github/workflows/validate-hydrasafe.yml",
+      "role": "repository-native-security-validation",
+      "claim_state": "BLOCKED",
       "surfaces": [
         "security/",
         "SECURITY.md",
         "scripts/validate_repository.py",
+        "scripts/write_validation_receipt.py",
         ".github/workflows/validate-hydrasafe.yml",
+        "receipts/validation-receipt.json",
         "docs/HYDRASAFE_MIRROR_HANDOFF.md"
       ],
-      "collision_boundary": "Security controls may constrain commercial and integration delivery but may not alter DiamondOps canonical liability documents or assume customer, PE, AHJ, insurer, OEM, owner, installer, operator, or OT authority.",
-      "release_condition": "Security baseline, machine-readable profile, fail-closed validation, workflow evidence, and handoff transfer are complete; otherwise renew with inspectable commit or workflow evidence.",
-      "expected_evidence": "commits, validator results, workflow run and job logs, and handoff status"
+      "collision_boundary": "The workflow validates and receipts security controls but may not alter DiamondOps canonical liability documents or assume customer, PE, AHJ, insurer, OEM, owner, installer, operator, or OT authority.",
+      "release_condition": "A completed workflow run validates the current main commit and publishes hydrasafe-validation-receipt-<sha> containing receipts/validation-receipt.json; failure remains BLOCKED or REVIEW_REQUIRED.",
+      "expected_evidence": "workflow run, job result, logs, uploaded validation receipt artifact, and receipt commit SHA",
+      "blocked_reason": "The connected workflow-run surface has not exposed a completed run for the latest main commit.",
+      "next_executable_action": "GitHub Actions runs on the next main push or workflow_dispatch and uploads the deterministic receipt only after validation succeeds.",
+      "implementation_evidence": [
+        "a87c101e24fa063e0f56b611d953630a8d26db91",
+        "2f82dbb201b66a8aefc5106a616faf4aba960e01",
+        "be9994c2e9d8d35cb1db0e1e48e6a07c7e9dd71e",
+        "1957bfc2442fb3b6658106c7a58c0b888e1a3f91",
+        "834f39c9c5729a4b44a9653ace69c2343890dbfb"
+      ]
     },
     {
       "task_id": "HYDRA-TEMPLATE-001",
