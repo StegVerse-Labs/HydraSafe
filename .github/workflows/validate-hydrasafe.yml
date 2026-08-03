@@ -26,3 +26,14 @@ jobs:
 
       - name: Validate HydraSafe repository
         run: python scripts/validate_repository.py
+
+      - name: Write validation receipt
+        run: python scripts/write_validation_receipt.py
+
+      - name: Upload validation receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: hydrasafe-validation-receipt-${{ github.sha }}
+          path: receipts/validation-receipt.json
+          if-no-files-found: error
+          retention-days: 90
