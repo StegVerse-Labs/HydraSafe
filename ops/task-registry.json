@@ -2,7 +2,7 @@
   "registry_version": "0.2.0",
   "repository": "StegVerse-Labs/HydraSafe",
   "branch": "main",
-  "updated_at": "2026-08-02T19:32:00-05:00",
+  "updated_at": "2026-09-02T07:53:00-05:00",
   "canonical_handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
   "tasks": [
     {
@@ -50,9 +50,9 @@
     {
       "task_id": "HYDRA-TEMPLATE-001",
       "originating_goal": "Install facility packet, commissioning, inspection, and incident framework templates.",
-      "owner": "StegVerse-Labs/HydraSafe",
+      "owner": "StegVerse-Labs/HydraSafe repository implementation lane",
       "role": "implementation",
-      "claim_state": "UNCLAIMED",
+      "claim_state": "CLAIMED",
       "surfaces": [
         "templates/permit-packet/",
         "templates/commissioning/",
@@ -60,7 +60,10 @@
         "playbooks/incident-response/"
       ],
       "release_condition": "Claim before mutation; release after templates and examples validate.",
-      "expected_evidence": "schema-valid templates, examples, tests, and handoff update"
+      "expected_evidence": "schema-valid templates, examples, tests, and handoff update",
+      "claimed_at": "2026-09-02T07:53:00-05:00",
+      "claim_expires_at": "2026-09-16T23:59:59-05:00",
+      "next_executable_action": "Install permit, commissioning, inspection, and incident-response templates; add validating examples; update handoff after direct verification."
     },
     {
       "task_id": "HYDRA-YIELDOS-001",
