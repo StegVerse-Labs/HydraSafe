@@ -1,6 +1,6 @@
 # HydraSafe Mirror Handoff
 
-Last updated: 2026-08-02T19:32:00-05:00
+Last updated: 2026-09-02T08:05:00-05:00
 Status: MERGED INTO CANONICAL WORKSTREAM — SESSION ARCHIVE SAFE
 
 ## Repository identity
@@ -47,7 +47,7 @@ Canonical claim registry: `ops/task-registry.json`.
 
 - `HYDRA-COMMERCIAL-001` — CLAIMED by the DiamondOps-Core customer-acquisition lane. Owns prospect research, outreach, conversion, and first reference engagement.
 - `HYDRA-SEC-001` — BLOCKED and repository-native. Owned by `.github/workflows/validate-hydrasafe.yml`; it no longer requires a chat-session observer.
-- `HYDRA-TEMPLATE-001` — UNCLAIMED. Owns permit, commissioning, inspection, and incident framework templates after an explicit claim is recorded.
+- `HYDRA-TEMPLATE-001` — REVIEW_REQUIRED. Claim was recorded, permit/commissioning/inspection/incident templates and three additional artifact examples were committed, and deterministic validator coverage was extended. Hosted validation for the latest main commit is not yet exposed, so COMPLETE is not claimed.
 - `HYDRA-YIELDOS-001` — UNCLAIMED. Requires distinct HydraSafe source-contract and YieldOS consumer-contract validation lanes.
 
 The earlier session-specific `HYDRA-SEC-001` claim is released. Its implementation role has been transferred to repository-native workflow ownership. Pending validation is not an archival dependency for the originating conversation.
@@ -137,7 +137,7 @@ Hydrogen permitting-readiness packet, per facility:
 
 1. Repository workflow validates and publishes the security receipt.
 2. DiamondOps-Core continues the claimed commercial lane without duplication.
-3. A new claimant records ownership before installing framework templates.
+3. Observe the repository validation result for the newly installed framework templates; mark the template task COMPLETE only after direct validation evidence.
 4. Distinct source and consumer claimants implement secure YieldOS integration.
 5. The commercial lane secures one bounded assessment intake and produces the first gap report.
 6. A suitable gap report converts into an executed SOW and paid facility packet.
@@ -162,6 +162,7 @@ A commercial engagement is active only when all applicable gates are met:
 
 Destination: `StegVerse-Labs/HydraSafe`
 
+Implemented 2026-09-02; validation pending:
 - `templates/permit-packet/README.md`
 - `templates/permit-packet/permit-packet.template.json`
 - `templates/commissioning/README.md`
@@ -170,6 +171,12 @@ Destination: `StegVerse-Labs/HydraSafe`
 - `templates/inspection/inspection-checklist.template.json`
 - `playbooks/incident-response/README.md`
 - `playbooks/incident-response/initial-response.template.json`
+- `examples/artifacts/permit-packet.example.json`
+- `examples/artifacts/inspection-checklist.example.json`
+- `examples/artifacts/incident-response-playbook.example.json`
+- `scripts/validate_repository.py` now validates template/playbook JSON artifacts in addition to examples.
+
+Remaining:
 - `integrations/yieldos/INGESTION_SPEC.md`
 - `integrations/yieldos/yieldos-export.schema.json`
 - `examples/yieldos/`
@@ -254,13 +261,20 @@ Archive disposition: `COMPLETE — ARCHIVE`.
 
 Required deliverable inventory for the current HydraSafe build: 32 items.
 
-- developed files or durable control surfaces: 18/32
+- developed files or durable control surfaces: 29/32
 - validated deliverables: 9/32 pending repository-native hosted receipt
 - integrated deliverables: 9/32
-- scaffolding or stubs: 5
-- missing required files or modules: 9
+- scaffolding or stubs: 2
+- missing required files or modules: 3
 - session goals transferred or complete: 6/6
 - session consolidation: 100%
 - archival readiness: 100%
 
 This file is the current source of truth. Update it after every meaningful claim, validation, integration, release, or archival-state change.
+
+
+## 2026-09-02 machine-execution update
+
+Template implementation evidence includes commits `45f5018`, `9040e2d`, `c5e66c0`, `9244f0c`, `1950457`, `64ec4f8`, `1d84046`, `f83a25e`, `c7d1596`, `8101ea7`, `31f4b32`, `e568082`, and validator commit `219b445`. Task-state update commit `f61d00e` records REVIEW_REQUIRED pending hosted validation.
+
+No workflow success, release, customer acceptance, engineering approval, permit issuance, or operational authorization is inferred from these commits.
