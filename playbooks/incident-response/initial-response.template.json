@@ -1,0 +1,89 @@
+{
+  "artifact_id": "hs-template-incident-response-001",
+  "artifact_type": "incident-response-playbook",
+  "artifact_version": "0.1.0",
+  "hazard_domain": [
+    "hydrogen",
+    "reactive-gas",
+    "pressure",
+    "ignition",
+    "incident-response"
+  ],
+  "lifecycle_stage": "incident-response",
+  "scope": {
+    "project_id": "replace-project-id",
+    "facility_reference": "replace-facility-reference",
+    "system_boundary": "Replace with the bounded incident documentation and evidence-preservation scope.",
+    "jurisdiction": null,
+    "sensitive_data_embedded": false
+  },
+  "issuer": {
+    "organization": "StegVerse-Labs",
+    "role": "HydraSafe documentation author",
+    "authority_class": "documentation-author"
+  },
+  "review_posture": {
+    "state": "review-required",
+    "required_roles": [
+      "asset-owner",
+      "operator",
+      "qualified-professional",
+      "authority-having-jurisdiction"
+    ],
+    "completed_reviews": []
+  },
+  "canonical_references": [
+    {
+      "reference_type": "diamondops-canonical",
+      "identifier": "StegVerse-Labs/DiamondOps-Core/docs/LIABILITY_BOUNDARY.md",
+      "digest": null,
+      "retrieved_at": null
+    }
+  ],
+  "evidence_references": [],
+  "status": "draft",
+  "disposition": "review-required",
+  "created_at": "2026-09-02T12:53:00Z",
+  "updated_at": "2026-09-02T12:53:00Z",
+  "integrity": {
+    "algorithm": "sha256",
+    "content_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "canonicalization": "jcs-rfc8785",
+    "payload_included": true,
+    "signature_reference": null
+  },
+  "authority_boundary": {
+    "physical_control": false,
+    "permit_issuance": false,
+    "engineering_approval": false
+  },
+  "payload": {
+    "documentation_sequence": [
+      {
+        "id": "IR-001",
+        "description": "Reference the facility emergency/incident-command procedure; do not replace it.",
+        "state": "open"
+      },
+      {
+        "id": "IR-002",
+        "description": "Record incident time window and non-sensitive source references.",
+        "state": "open"
+      },
+      {
+        "id": "IR-003",
+        "description": "Preserve evidence provenance and chain-of-custody references.",
+        "state": "open"
+      },
+      {
+        "id": "IR-004",
+        "description": "Record external authority and qualified-professional dispositions when available.",
+        "state": "open"
+      },
+      {
+        "id": "IR-005",
+        "description": "Create post-incident open-item and corrective-action reference list without asserting engineering approval.",
+        "state": "open"
+      }
+    ]
+  }
+}
