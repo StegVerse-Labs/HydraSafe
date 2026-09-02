@@ -23,6 +23,7 @@ CONTROL_PROFILE = ROOT / "security" / "control-profile.json"
 TASK_REGISTRY = ROOT / "ops" / "task-registry.json"
 EXAMPLE_ARTIFACTS = ROOT / "examples" / "artifacts"
 EXAMPLE_EVENTS = ROOT / "examples" / "events"
+TEMPLATE_ROOTS = [ROOT / "templates", ROOT / "playbooks"]
 HANDOFF = ROOT / "docs" / "HYDRASAFE_MIRROR_HANDOFF.md"
 CANONICAL_EVIDENCE = ROOT / "docs" / "EVIDENCE_PACK.md"
 
@@ -124,6 +125,14 @@ def examples(directory: Path) -> list[Path]:
     return sorted(directory.glob("*.json")) if directory.exists() else []
 
 
+def template_artifacts() -> list[Path]:
+    paths: list[Path] = []
+    for root in TEMPLATE_ROOTS:
+        if root.exists():
+            paths.extend(sorted(root.rglob("*.json")))
+    return paths
+
+
 def main() -> int:
     failures: list[str] = []
     for required in (HANDOFF, CANONICAL_EVIDENCE, SECURITY_BASELINE, CONTROL_PROFILE, TASK_REGISTRY):
@@ -148,6 +157,13 @@ def main() -> int:
         except ValueError as exc: failures.append(str(exc)); continue
         failures.extend(f"{path.relative_to(ROOT)}: {e}" for e in schema_errors(artifact, artifact_schema))
         failures.extend(validate_artifact_semantics(artifact, path))
+    template_files = template_artifacts()
+    if not template_files: failures.append("at least one HydraSafe template artifact is required")
+    for path in template_files:
+        try: artifact = load_json(path)
+        except ValueError as exc: failures.append(str(exc)); continue
+        failures.extend(f"{path.relative_to(ROOT)}: {e}" for e in schema_errors(artifact, artifact_schema))
+        failures.extend(validate_artifact_semantics(artifact, path))
     event_examples = examples(EXAMPLE_EVENTS)
     for path in event_examples:
         try: event = load_json(path)
@@ -157,7 +173,7 @@ def main() -> int:
         print("HydraSafe validation FAILED")
         for failure in failures: print(f"- {failure}")
         return 1
-    print(f"HydraSafe validation PASSED: {len(artifact_examples)} artifact example(s), {len(event_examples)} event example(s), federal-floor-plus security profile, and task registry.")
+    print(f"HydraSafe validation PASSED: {len(artifact_examples)} artifact example(s), {len(template_files)} template artifact(s), {len(event_examples)} event example(s), federal-floor-plus security profile, and task registry.")
     return 0
 
 
