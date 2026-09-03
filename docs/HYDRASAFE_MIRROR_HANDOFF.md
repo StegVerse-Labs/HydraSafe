@@ -1,6 +1,6 @@
 # HydraSafe Mirror Handoff
 
-Last updated: 2026-09-02T08:05:00-05:00
+Last updated: 2026-09-02T20:40:00-05:00
 Status: MERGED INTO CANONICAL WORKSTREAM — SESSION ARCHIVE SAFE
 
 ## Repository identity
@@ -246,6 +246,25 @@ When the repository becomes genuinely release-ready, verify and record required 
 - `stegguardian-wiki`
 
 No propagation is currently claimed.
+
+## Adjacent HydroSafe water-safety research candidate
+
+Recorded 2026-09-02T20:40:00-05:00.
+
+A distinct water-treatment research finding is preserved at:
+
+- `docs/research/HYDROSAFE_FERROFLUID_MICROPLASTICS_FILTRATION.md`
+- documentation commit: `18cdfbe96378c506fd475f4874f742b38cdd31ec`
+
+This record documents the publicly described Mia Heller ferrofluid/magnetic-separation microplastics prototype, its reported 95.52% microplastic-removal and 87.15% ferrofluid-recovery results, an evidence-oriented process model, validation questions, attribution/IP boundaries, and candidate next artifacts.
+
+Scope decision:
+
+- this is a **HydroSafe** water-safety / water-treatment research candidate;
+- it does not modify HydraSafe's hydrogen/reactive-gas product scope;
+- it is not counted in the current HydraSafe v0.1 deliverable inventory;
+- no independent replication, drinking-water safety certification, regulatory approval, production readiness, or StegVerse ownership of the underlying invention is claimed;
+- if `StegVerse-Labs/HydroSafe` is created, establish `docs/HYDROSAFE_MIRROR_HANDOFF.md` there first and migrate this research record before product implementation.
 
 ## Session consolidation and archive determination
 
