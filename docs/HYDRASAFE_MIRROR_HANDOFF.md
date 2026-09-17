@@ -1,6 +1,6 @@
 # HydraSafe Mirror Handoff
 
-Last updated: 2026-09-02T20:40:00-05:00
+Last updated: 2026-09-17T18:28:00-05:00
 Status: MERGED INTO CANONICAL WORKSTREAM — SESSION ARCHIVE SAFE
 
 ## Repository identity
@@ -297,3 +297,19 @@ This file is the current source of truth. Update it after every meaningful claim
 Template implementation evidence includes commits `45f5018`, `9040e2d`, `c5e66c0`, `9244f0c`, `1950457`, `64ec4f8`, `1d84046`, `f83a25e`, `c7d1596`, `8101ea7`, `31f4b32`, `e568082`, and validator commit `219b445`. Task-state update commit `f61d00e` records REVIEW_REQUIRED pending hosted validation.
 
 No workflow success, release, customer acceptance, engineering approval, permit issuance, or operational authorization is inferred from these commits.
+
+## 2026-09-17 commercial evidence activation
+
+Canonical ownership is unchanged: parent revenue goal `REV-001` remains in DiamondOps-Core and `HYDRA-COMMERCIAL-001` remains CLAIMED by the DiamondOps-Core customer-acquisition lane. No duplicate commercial task was created.
+
+Current commercial evidence state:
+- five leading U.S. Tier-A prospects were refreshed against current first-party evidence and moved to `READY_FOR_OUTREACH`: Great Lakes Crystal Technologies, Plasmability, Seki Diamond Systems, Carat Systems, and Element Six;
+- four prospect-specific Outlook drafts were created for Great Lakes, Seki, Carat, and Element Six and remain unsent;
+- Plasmability remains ready through its current official contact page/phone; no email address was guessed from the live site's obfuscated address;
+- no record is `CONTACTED`; no provider-observed send receipt exists yet;
+- no prospect has yet supplied authentic evidence of problem confirmation, bounded-assessment acceptance, customer-authorized document-set discussion, paid-scope/quote willingness, or authorized-decision-maker referral;
+- the introductory commercial target remains USD 8,000 for each of the first two bounded reference engagements, with no prospect acceptance claimed.
+
+The responsibility boundary is unchanged: HydraSafe provides documentation and evidence readiness only. It does not provide engineering approval, PE authority, legal advice, code/compliance certification, permit issuance, site inspection, physical work, or authorization to operate. Any required licensed engineering review remains independently owned.
+
+Next action is external evidence acquisition, not implementation: after explicit send authorization, send only the prepared initial cohort, preserve provider-observed send evidence without publishing private customer data, and classify replies strictly against the five commercial predicates above.
