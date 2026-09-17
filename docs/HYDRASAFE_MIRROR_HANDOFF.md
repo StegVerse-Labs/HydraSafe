@@ -313,3 +313,25 @@ Current commercial evidence state:
 The responsibility boundary is unchanged: HydraSafe provides documentation and evidence readiness only. It does not provide engineering approval, PE authority, legal advice, code/compliance certification, permit issuance, site inspection, physical work, or authorization to operate. Any required licensed engineering review remains independently owned.
 
 Next action is external evidence acquisition, not implementation: after explicit send authorization, send only the prepared initial cohort, preserve provider-observed send evidence without publishing private customer data, and classify replies strictly against the five commercial predicates above.
+
+## Canonical COSV binding — 2026-09-17
+
+`HYDRA-COMMERCIAL-001` now carries an embedded canonical `task.v1` state vector in `ops/task-registry.json`:
+
+```text
+COSV ID / vector: 20010000110000
+notation: L R U I V G O C M T B E A P
+lifecycle: CLAIMED_IMPLEMENTATION
+archive_ready: false
+unassigned_work: 0
+chat_owned_implementation: 1
+canonical_owner_installed: true
+thread_required: true
+blocker_count: 0
+evidence_complete: false
+activated: false
+propagated: false
+authority_effect: NONE
+```
+
+This is a compact evidence index for the existing commercial task, not a new task, authority grant, runtime, scheduler, connector, or implementation lane. It records that the current conversation is advancing one bounded implementation/commercial-activation claim, the canonical owner remains installed, explicit send authorization still requires the current thread, there is no blocker count, and commercial evidence remains incomplete until authentic prospect evidence is obtained.
