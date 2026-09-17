@@ -2,7 +2,7 @@
   "registry_version": "0.2.0",
   "repository": "StegVerse-Labs/HydraSafe",
   "branch": "main",
-  "updated_at": "2026-09-17T18:28:00-05:00",
+  "updated_at": "2026-09-17T18:36:00-05:00",
   "canonical_handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
   "tasks": [
     {
@@ -18,9 +18,40 @@
       "collision_boundary": "This claim owns customer research, outreach, commercial conversion, and first reference engagement. It does not own HydraSafe security-control implementation.",
       "release_condition": "First engagement is durably accepted or the canonical handoff reassigns the lane.",
       "expected_evidence": "outreach receipts, intake record, executed SOW, delivery acceptance, and reference-rights disposition",
-      "last_activity_at": "2026-09-17T18:28:00-05:00",
+      "last_activity_at": "2026-09-17T18:36:00-05:00",
       "commercial_evidence_state": "Five leading U.S. Tier-A prospects refreshed and READY_FOR_OUTREACH; four prospect-specific Outlook drafts prepared and unsent; no prospect is CONTACTED and no commercial-validation predicate is yet satisfied.",
-      "next_executable_action": "After explicit send authorization, send only the prepared cohort through the authenticated provider, preserve provider-observed send evidence, advance only actually sent records to CONTACTED, and classify authentic replies only as problem confirmation, assessment acceptance, authorized-document-set discussion, paid-scope/quote willingness, or authorized-decision-maker referral."
+      "next_executable_action": "After explicit send authorization, send only the prepared cohort through the authenticated provider, preserve provider-observed send evidence, advance only actually sent records to CONTACTED, and classify authentic replies only as problem confirmation, assessment acceptance, authorized-document-set discussion, paid-scope/quote willingness, or authorized-decision-maker referral.",
+      "machine_readable_state": {
+        "cosv": {
+          "profile": "task.v1",
+          "level": "task",
+          "vector": "20010000110000",
+          "symbol_order": "LRUIVGOCMTBEAP",
+          "exact_metrics": {
+            "lifecycle": "CLAIMED_IMPLEMENTATION",
+            "archive_ready": false,
+            "unassigned_work": 0,
+            "chat_owned_implementation": 1,
+            "chat_owned_validation": 0,
+            "chat_owned_integration": 0,
+            "chat_owned_observation": 0,
+            "chat_owned_credentials": 0,
+            "canonical_owner_installed": true,
+            "thread_required": true,
+            "blocker_count": 0,
+            "evidence_complete": false,
+            "activated": false,
+            "propagated": false
+          },
+          "evidence_refs": [
+            "ops/task-registry.json",
+            "docs/HYDRASAFE_MIRROR_HANDOFF.md",
+            "StegVerse-Labs/DiamondOps-Core/customer-acquisition/hydrasafe/"
+          ],
+          "observed_at": "2026-09-17T18:36:00-05:00",
+          "authority_effect": "NONE"
+        }
+      }
     },
     {
       "task_id": "HYDRA-SEC-001",
