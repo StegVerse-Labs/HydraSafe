@@ -59,3 +59,7 @@ The current development source of truth is [`docs/HYDRASAFE_MIRROR_HANDOFF.md`](
 HydraSafe commercial activation is owned by `HYDRA-COMMERCIAL-001` and coordinated under DiamondOps-Core parent revenue goal `REV-001`. Customer acquisition records remain canonical in [`StegVerse-Labs/DiamondOps-Core/customer-acquisition/hydrasafe/`](https://github.com/StegVerse-Labs/DiamondOps-Core/tree/main/customer-acquisition/hydrasafe) while this repository owns the bounded assessment and paid delivery offer.
 
 As of 2026-09-17, five leading U.S. Tier-A prospects have current public-evidence refreshes and are `READY_FOR_OUTREACH`; four prospect-specific drafts are prepared but unsent. No prospect is recorded as contacted and no commercial-validation predicate has yet been evidenced. The existing introductory target remains USD 8,000 for each of the first two bounded reference engagements, without implying prospect acceptance.
+
+### COSV
+
+The existing commercial task `HYDRA-COMMERCIAL-001` is bound to canonical `task.v1` vector `20010000110000` in `ops/task-registry.json`. The vector is evidence indexing only and grants no execution, credential, engineering, commercial, or transition authority.
