@@ -2,7 +2,7 @@
   "registry_version": "0.2.0",
   "repository": "StegVerse-Labs/HydraSafe",
   "branch": "main",
-  "updated_at": "2026-09-17T20:11:35-05:00",
+  "updated_at": "2026-09-17T23:05:20-05:00",
   "canonical_handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
   "tasks": [
     {
@@ -18,9 +18,9 @@
       "collision_boundary": "This claim owns customer research, outreach, commercial conversion, and first reference engagement. It does not own HydraSafe security-control implementation.",
       "release_condition": "First engagement is durably accepted or the canonical handoff reassigns the lane.",
       "expected_evidence": "outreach receipts, intake record, executed SOW, delivery acceptance, and reference-rights disposition",
-      "last_activity_at": "2026-09-17T20:11:35-05:00",
-      "commercial_evidence_state": "Authenticated Outlook sender rigel@stegverse.org has provider-observed SENT evidence for four Tier-A prospects: Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, and Element Six. Those four records are CONTACTED; Plasmability remains READY_FOR_OUTREACH. Immediate reply recheck found no inbound response and no commercial-validation predicate is satisfied.",
-      "next_executable_action": "Observe Outlook for authentic replies from the four contacted prospects and related organization-domain senders; preserve exact response evidence before advancing beyond CONTACTED, and promote only explicit problem confirmation, bounded-assessment acceptance, customer-authorized document-set discussion, paid-scope/quote willingness, or authorized-decision-maker referral.",
+      "last_activity_at": "2026-09-17T23:05:20-05:00",
+      "commercial_evidence_state": "Four Tier-A prospects remain CONTACTED with provider-observed Outlook SENT evidence and no authentic reply yet; Plasmability remains READY_FOR_OUTREACH. A bounded public HydraSafe service page has been merged into Site and both GitHub Pages and Cloudflare provider builds succeeded for the exact merge SHA, but direct custom-domain served-body observation is still unverified; no commercial-validation predicate is satisfied.",
+      "next_executable_action": "Obtain direct served-body observation of https://stegverse.org/hydrasafe/ from the public origin, then continue authentic Outlook response observation; use the public page only as explanatory context and promote only explicit problem confirmation, bounded-assessment acceptance, customer-authorized document-set discussion, paid-scope/quote willingness, or authorized-decision-maker referral.",
       "machine_readable_state": {
         "cosv": {
           "profile": "task.v1",
@@ -65,6 +65,28 @@
         "commercial_predicates_validated": false,
         "observed_at": "2026-09-17T20:11:35-05:00",
         "private_provider_message_ids_recorded_publicly": false
+      },
+      "public_service_page_state": {
+        "source_repository": "StegVerse-Labs/Site",
+        "site_pull_request": 1385,
+        "site_merge_sha": "0a8b80d12d5e1fb1a2690de4d304fec3a7e5ae5e",
+        "source_page": "hydrasafe/index.html",
+        "services_page": "services.html",
+        "public_route": "https://stegverse.org/hydrasafe/",
+        "services_route": "https://stegverse.org/services.html",
+        "publication_posture": "MIRROR",
+        "site_is_service_authority": false,
+        "github_pages_run": 35305527744,
+        "github_pages_build_job": 105476831349,
+        "github_pages_deploy_job": 105476859658,
+        "github_pages_conclusion": "success",
+        "cloudflare_workers_build_id": "8d87e874-8596-4b1e-9223-243652dcceae",
+        "cloudflare_workers_build_conclusion": "success",
+        "served_body_observed": false,
+        "served_body_observation_blocker": "Current session web fetch is disabled/inaccessible for stegverse.org; container DNS resolution failed; no connected Cloudflare plugin or authorized remote device is available.",
+        "commercial_predicate_effect": "NONE",
+        "authority_effect": "NONE",
+        "observed_at": "2026-09-17T23:05:20-05:00"
       }
     },
     {

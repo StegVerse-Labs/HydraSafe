@@ -1,6 +1,6 @@
 # HydraSafe Mirror Handoff
 
-Last updated: 2026-09-17T20:11:35-05:00
+Last updated: 2026-09-17T23:05:20-05:00
 Status: MERGED INTO CANONICAL WORKSTREAM — SESSION ARCHIVE SAFE
 
 ## Repository identity
@@ -353,3 +353,28 @@ The Outlook provider profile resolved to the authorized sender `rigel@stegverse.
 This advances those four records to `CONTACTED` and no further. Plasmability remains `READY_FOR_OUTREACH`. Immediate response searches found no inbound reply from the target addresses or organization-domain searches. All five commercial-validation predicates remain unsatisfied, and no buyer validation, paid scope, signed engagement, or revenue is claimed.
 
 The current task remains `HYDRA-COMMERCIAL-001` with COSV `20010000110000`; no duplicate task, connector, scheduler, runtime, or technical feature was introduced.
+
+## Public HydraSafe service-page publication — 2026-09-17
+
+The existing `HYDRA-COMMERCIAL-001` commercial lane now has a customer-facing Site projection produced through the existing `StegVerse-Labs/Site` publication architecture. No duplicate HydraSafe commercial task was created.
+
+Published source surfaces:
+- Site PR `#1385` merged as `0a8b80d12d5e1fb1a2690de4d304fec3a7e5ae5e`;
+- customer page source: `hydrasafe/index.html`;
+- public service directory source: `services.html`;
+- Services discovery added to shared Site navigation and homepage;
+- Site `public-registry.json` records `HYDRASAFE-COMMERCIAL-SERVICE-001` with posture `MIRROR` and source authority `StegVerse-Labs/HydraSafe`.
+
+Publication-provider evidence for the exact merged Site SHA:
+- GitHub Pages run `35305527744`: `success`;
+- Pages build job `105476831349`: `success`;
+- Pages deploy job `105476859658`: `success`, including `Deploy to GitHub Pages`;
+- Cloudflare `Workers Builds: site`: `success` for build `8d87e874-8596-4b1e-9223-243652dcceae`;
+- expected custom-domain route: `https://stegverse.org/hydrasafe/`;
+- expected Services route: `https://stegverse.org/services.html`.
+
+Direct served-body observation is **not yet claimed**. The available web fetch surface returned a disabled/inaccessible result for the custom domain, the local container could not resolve the domain, no connected Cloudflare plugin exists, and no authorized remote device was available. Therefore `served_body_observed=false` remains explicit even though both publication-provider deployments succeeded.
+
+The public page preserves the commercial and authority boundaries: bounded no-cost document-set review; concise gap classifications; optional separately scoped remediation; no engineering approval, PE/stamping authority, code/compliance certification, permit issuance, legal advice, site inspection, physical work, or authorization to operate. Independent professional review remains independently owned where required. The public engagement CTA is `rigel@stegverse.org`.
+
+Publication does not satisfy any commercial-validation predicate. Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, and Element Six remain `CONTACTED`; Plasmability remains `READY_FOR_OUTREACH`. No buyer response, assessment acceptance, authorized document set, paid-scope willingness, decision-maker referral, signed engagement, or revenue is inferred from the page or its deployment.
