@@ -1,6 +1,6 @@
 # HydraSafe Mirror Handoff
 
-Last updated: 2026-09-17T18:28:00-05:00
+Last updated: 2026-09-17T20:06:00-05:00
 Status: MERGED INTO CANONICAL WORKSTREAM — SESSION ARCHIVE SAFE
 
 ## Repository identity
@@ -335,3 +335,13 @@ authority_effect: NONE
 ```
 
 This is a compact evidence index for the existing commercial task, not a new task, authority grant, runtime, scheduler, connector, or implementation lane. It records that the current conversation is advancing one bounded implementation/commercial-activation claim, the canonical owner remains installed, explicit send authorization still requires the current thread, there is no blocker count, and commercial evidence remains incomplete until authentic prospect evidence is obtained.
+
+## Gmail send authorization and provider-identity reconciliation — 2026-09-17
+
+Explicit authorization was received to send the four prepared HydraSafe prospect messages using Gmail from `rigel@stegverse.org`.
+
+Provider inspection did **not** establish that sender identity on the currently connected Gmail provider. The connected Gmail profile resolves to a different mailbox, the Gmail action surface exposes no selectable `From`/send-as parameter, and a Gmail Sent-history check found no provider-observed prior sent message from `rigel@stegverse.org`. Therefore no prospect message was sent from the mismatched account and no prospect was advanced to `CONTACTED`.
+
+This is an account-identity prerequisite, not a request for technical implementation. No connector, scheduler, runtime, workflow, or alternate commercial task is to be added. The remediation path is to connect or switch Gmail to the authorized sender identity, then use the existing four messages unchanged unless public/prospect evidence materially changes before send.
+
+Current predicates remain: zero provider-observed sends, zero contacted prospects, zero replies, zero problem confirmations, zero assessment acceptances, zero authorized-document-set discussions, zero paid-scope/quote willingness, zero authorized-decision-maker referrals, and zero paid engagements.
