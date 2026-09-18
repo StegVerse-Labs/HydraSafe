@@ -71,3 +71,9 @@ As of 2026-09-17, explicit authorization exists to send the prepared four-prospe
 ### Provider-observed Outlook outreach
 
 On 2026-09-17, four approved prospect messages were sent from the authenticated Outlook profile `rigel@stegverse.org` and independently re-observed in Sent Items. Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, and Element Six are now `CONTACTED`; Plasmability remains `READY_FOR_OUTREACH`. No inbound reply or commercial-validation predicate was observed during the immediate recheck.
+
+### Public HydraSafe service page
+
+The bounded HydraSafe documentation-readiness offer is now published in the StegVerse Site source at `/hydrasafe/` and discoverable through the public Services surface. Site PR #1385 merged as `0a8b80d12d5e1fb1a2690de4d304fec3a7e5ae5e`; GitHub Pages and Cloudflare provider publication both succeeded for that exact SHA. The expected public URL is `https://stegverse.org/hydrasafe/`.
+
+Site is a public `MIRROR`, not HydraSafe authority. Direct custom-domain served-body observation remains unverified in the current execution environment, so publication-provider success is not mislabeled as a successful HTTP body observation. Commercial-validation state is unchanged.
