@@ -67,3 +67,7 @@ The existing commercial task `HYDRA-COMMERCIAL-001` is bound to canonical `task.
 ### Authorized Gmail outreach state
 
 As of 2026-09-17, explicit authorization exists to send the prepared four-prospect HydraSafe cohort from `rigel@stegverse.org` using Gmail. The currently connected Gmail identity does not match that authorized sender and exposes no selectable send-as surface, so no message has been sent and no record is `CONTACTED`. Commercial validation remains unchanged pending correct-provider identity and authentic prospect evidence.
+
+### Provider-observed Outlook outreach
+
+On 2026-09-17, four approved prospect messages were sent from the authenticated Outlook profile `rigel@stegverse.org` and independently re-observed in Sent Items. Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, and Element Six are now `CONTACTED`; Plasmability remains `READY_FOR_OUTREACH`. No inbound reply or commercial-validation predicate was observed during the immediate recheck.
