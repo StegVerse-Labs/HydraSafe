@@ -77,3 +77,9 @@ On 2026-09-17, four approved prospect messages were sent from the authenticated 
 The bounded HydraSafe documentation-readiness offer is now published in the StegVerse Site source at `/hydrasafe/` and discoverable through the public Services surface. Site PR #1385 merged as `0a8b80d12d5e1fb1a2690de4d304fec3a7e5ae5e`; GitHub Pages and Cloudflare provider publication both succeeded for that exact SHA. The expected public URL is `https://stegverse.org/hydrasafe/`.
 
 Site is a public `MIRROR`, not HydraSafe authority. Direct custom-domain served-body observation remains unverified in the current execution environment, so publication-provider success is not mislabeled as a successful HTTP body observation. Commercial-validation state is unchanged.
+
+### Live HydraSafe body verified
+
+A user-supplied iPhone Safari observation now confirms the public HydraSafe body is being served on `stegverse.org` with the expected HydraSafe heading, bounded no-cost review CTA, MIRROR authority boundary, and Services navigation. Evidence hash: `b86de0c30c95fd0905bb384ce09663342e08c70f10757eb1ba01cd6f9ced26c5`.
+
+The separate `/services.html` body has not been independently screenshot-observed, though its source is merged and the Services navigation entry is visible on the live HydraSafe page. This publication evidence does not imply prospect interest, assessment acceptance, paid scope, or revenue.

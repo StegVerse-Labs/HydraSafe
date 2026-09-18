@@ -378,3 +378,20 @@ Direct served-body observation is **not yet claimed**. The available web fetch s
 The public page preserves the commercial and authority boundaries: bounded no-cost document-set review; concise gap classifications; optional separately scoped remediation; no engineering approval, PE/stamping authority, code/compliance certification, permit issuance, legal advice, site inspection, physical work, or authorization to operate. Independent professional review remains independently owned where required. The public engagement CTA is `rigel@stegverse.org`.
 
 Publication does not satisfy any commercial-validation predicate. Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, and Element Six remain `CONTACTED`; Plasmability remains `READY_FOR_OUTREACH`. No buyer response, assessment acceptance, authorized document set, paid-scope willingness, decision-maker referral, signed engagement, or revenue is inferred from the page or its deployment.
+
+## Direct public served-body observation — 2026-09-17
+
+A user-supplied iPhone Safari screenshot now provides direct public-origin evidence for the HydraSafe customer-facing body on `stegverse.org`. The screenshot SHA-256 is `b86de0c30c95fd0905bb384ce09663342e08c70f10757eb1ba01cd6f9ced26c5`.
+
+Visible content matches the merged `hydrasafe/index.html` source on current Site main:
+- `HydraSafe · DiamondOps · Commercial service mirror`;
+- `Documentation readiness for hydrogen & reactive-gas CVD operations.`;
+- `Request a no-cost gap review`;
+- `Public posture: MIRROR.`;
+- the public `Services` navigation entry.
+
+Therefore `served_body_observed=true` is established for the HydraSafe public body. The screenshot does not independently render the `/services.html` body itself, so `services_route_body_observed=false` remains explicit; this does not block the Site publication claim because its release condition requires direct observation of the HydraSafe route plus merged Services discovery.
+
+The bounded Site publication claim `SITE-HYDRASAFE-PUBLICATION-20260917-R3` was terminalized by Site PR `#1388`, merge `087d8741db3dc6e15e734e82f440351b1a61d09a`. Site remains presentation only; `HYDRA-COMMERCIAL-001` remains the sole commercial owner.
+
+A fresh Outlook recheck after this observation found no authentic inbound reply from Great Lakes Crystal Technologies, Seki Diamond Systems, Carat Systems, or Element Six. All five commercial-validation predicates therefore remain unsatisfied.
