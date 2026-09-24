@@ -2,7 +2,7 @@
   "registry_version": "0.2.0",
   "repository": "StegVerse-Labs/HydraSafe",
   "branch": "main",
-  "updated_at": "2026-09-24T12:37:47-05:00",
+  "updated_at": "2026-09-24T17:19:57-05:00",
   "canonical_handoff": "docs/HYDRASAFE_MIRROR_HANDOFF.md",
   "tasks": [
     {
@@ -18,9 +18,9 @@
       "collision_boundary": "This claim owns customer research, outreach, commercial conversion, and first reference engagement. It does not own HydraSafe security-control implementation.",
       "release_condition": "First engagement is durably accepted or the canonical handoff reassigns the lane.",
       "expected_evidence": "outreach receipts, intake record, executed SOW, delivery acceptance, and reference-rights disposition",
-      "last_activity_at": "2026-09-24T12:37:47-05:00",
-      "commercial_evidence_state": "Five Tier-A prospects CONTACTED after Plasmability outreach at 2026-09-24T17:37:47Z. Outlook send action succeeded and exact subject/recipient was independently observed in mailbox search. Recipient info@plasmability.com is a published company address in external business directories; current company website email display is protected/obfuscated. Immediate inbound search found no reply. Prior four remain CONTACTED with no observed replies at Sep 24 10:42 CDT recheck. All five commercial-validation predicates false; sent evidence does not establish delivery, buyer acceptance, or facility need.",
-      "next_executable_action": "Preserve five CONTACTED prospects; collect authentic inbound response before classifying the five explicit commercial predicates. Check five exact addresses and organization domains after the next normal business-day opportunity, plus delivery-failure notices. Do not issue duplicate outreach or treat silence as rejection.",
+      "last_activity_at": "2026-09-24T17:19:57-05:00",
+      "commercial_evidence_state": "Five Tier-A prospects and three newly contacted Tier-B prospects now CONTACTED (eight total). On 2026-09-24, authenticated Outlook sends to CVD Diamond Corporation at 22:19:52Z, Diyam Impex at 22:19:55Z, and CVD Diamond Inc at 22:19:57Z were independently observed by exact-recipient/subject mailbox searches. Immediate exact-sender reply searches returned no messages. These Tier-B emails explicitly qualify hydrogen/reactive-gas process and reactor ownership rather than treating public CVD product branding as verified operating scope. Three additional Tier-B entries contacted; others unchanged; no commercial-validation predicate satisfied. Email send is not recipient delivery evidence.",
+      "next_executable_action": "Continue Tier-B contact only where current first-party evidence confirms relevant operations and a publicly listed route; require prospect-specific qualification when in-house reactor ownership/hydrogen scope is unknown. Monitor eight contacted prospect sender and organization-domain responses plus delivery-failure notices after normal business-day windows; preserve authentic inbound messages before five-predicate classification. Avoid duplicate outreach and interpret silence only as absence of evidence.",
       "machine_readable_state": {
         "cosv": {
           "profile": "task.v1",
@@ -57,15 +57,16 @@
         "authorized_sender": "rigel@stegverse.org",
         "explicit_send_authorization_observed": true,
         "provider_identity_match": true,
-        "messages_sent": 5,
-        "contacted_records": 5,
-        "sent_evidence_window_utc": "2026-09-18T01:11:32Z/2026-09-24T17:37:47Z",
+        "messages_sent": 8,
+        "contacted_records": 8,
+        "sent_evidence_window_utc": "2026-09-18T01:11:32Z/2026-09-24T22:19:57Z",
         "immediate_reply_recheck_complete": true,
         "replies_observed": 0,
         "commercial_predicates_validated": false,
         "observed_at": "2026-09-17T20:11:35-05:00",
         "private_provider_message_ids_recorded_publicly": false,
-        "latest_reply_recheck_at": "2026-09-24T12:37:47-05:00"
+        "latest_reply_recheck_at": "2026-09-24T17:19:57-05:00",
+        "tier_b_contacted_records": 3
       },
       "public_service_page_state": {
         "source_repository": "StegVerse-Labs/Site",
