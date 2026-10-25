@@ -28,7 +28,9 @@ def main() -> int:
         ROOT / "security" / "control-profile.json",
         ROOT / "ops" / "task-registry.json",
         ROOT / "scripts" / "validate_repository.py",
-        ROOT / ".github" / "workflows" / "validate-hydrasafe.yml",
+        ROOT / ".github" / "workflows" / "validation-dispatcher.yml",
+        ROOT / "tools" / "tasks" / "task_catalog.json",
+        ROOT / "tools" / "tasks" / "folded" / "validate-hydrasafe.yml",
     ]
     missing = [str(path.relative_to(ROOT)) for path in required if not path.is_file()]
     if missing:
