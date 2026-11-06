@@ -108,7 +108,7 @@
     {
       "task_id": "HYDRA-SEC-001",
       "originating_goal": "Make federal security requirements the minimum floor and exceed them.",
-      "owner": "StegVerse-Labs/HydraSafe .github/workflows/validate-hydrasafe.yml",
+      "owner": "StegVerse-Labs/HydraSafe .github/workflows/validation-dispatcher.yml (catalog group validate-hydrasafe.validate; verbatim original tools/tasks/folded/validate-hydrasafe.yml)",
       "role": "repository-native-security-validation",
       "claim_state": "BLOCKED",
       "surfaces": [
@@ -116,7 +116,9 @@
         "SECURITY.md",
         "scripts/validate_repository.py",
         "scripts/write_validation_receipt.py",
-        ".github/workflows/validate-hydrasafe.yml",
+        ".github/workflows/validation-dispatcher.yml",
+        "tools/tasks/task_catalog.json",
+        "tools/tasks/folded/validate-hydrasafe.yml",
         "receipts/validation-receipt.json",
         "docs/HYDRASAFE_MIRROR_HANDOFF.md"
       ],

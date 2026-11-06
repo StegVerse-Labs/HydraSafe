@@ -23,13 +23,13 @@ jobs:
       - name: Checkout StegBrain
         uses: actions/checkout@v4
         with:
-          repository: StegVerse-labs/StegBrain
+          repository: StegVerse-Labs/StegBrain
           path: stegbrain-lib
 
       - name: Checkout DiamondOps-Core
         uses: actions/checkout@v4
         with:
-          repository: StegVerse-labs/DiamondOps-Core
+          repository: StegVerse-Labs/DiamondOps-Core
           path: core
 
       - name: Set up Python

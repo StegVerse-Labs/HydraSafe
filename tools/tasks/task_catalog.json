@@ -1,0 +1,133 @@
+{
+ "schema": "stegverse.task-catalog/v1",
+ "repository": "StegVerse-Labs/HydraSafe",
+ "goal_id": "G17-WORKFLOW-SURFACE-MINIMIZATION",
+ "authority": "Rigel 2026-10-24 retroactive G17 enforcement (StegVerse-org/.github#166); pattern StegVerse-Labs/StegDB#60 (eab2e773)",
+ "dispatcher": ".github/workflows/validation-dispatcher.yml",
+ "runner": "tools/tasks/run_catalog.py",
+ "runner_source": "StegVerse-Labs/StegDB tools/tasks/run_catalog.py @ eab2e773271f3e63466a710f1b4555f677882848 (sha256 f741f30557888fd8e4852a52adfc65736a08898d49ade7519f6bcc2672921e9b), copied unmodified",
+ "rule": "Every check a folded workflow job ran is one group here; its step bodies are the original run blocks byte for byte, pinned by sha256, except the repairs listed. A new check is a new group (or a step in one), never a new workflow file.",
+ "path_filters": "Dropped: every group runs on every pull_request and push to main (a superset of the original path-filtered runs). workflow_dispatch/schedule triggers are not carried (no manual dispatch, no cron).",
+ "repairs": [
+  "None of the folded run blocks is changed. workflow_dispatch is not carried (no manual dispatch). validate-hydrasafe's push trigger was main-only; the group now also runs on pull_request, as it already did."
+ ],
+ "folded_from_commit": "a97ec64a304c5c813493b2d4c3b4cfa36d4a8d3e",
+ "groups": [
+  {
+   "id": "test-readiness.repo-smoke",
+   "source": {
+    "workflow": ".github/workflows/test-readiness.yml",
+    "workflow_name": "Test Readiness",
+    "job": "repo-smoke",
+    "job_name": null,
+    "commit": "a97ec64",
+    "triggers_before": [
+     "push",
+     "pull_request",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Baseline repository smoke test",
+     "run_file": "tools/tasks/steps/test-readiness.repo-smoke/01-baseline-repository-smoke-test.sh",
+     "run_sha256": "b9ca9ed2406c9532b40bd3c46ae13c4eb0924562a3232a0b9308a04329377ec1"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 5,
+    "python_version": "3.11"
+   }
+  },
+  {
+   "id": "validate-hydrasafe.validate",
+   "source": {
+    "workflow": ".github/workflows/validate-hydrasafe.yml",
+    "workflow_name": "Validate HydraSafe",
+    "job": "validate",
+    "job_name": null,
+    "commit": "a97ec64",
+    "triggers_before": [
+     "push",
+     "pull_request",
+     "workflow_dispatch"
+    ],
+    "permissions_before": {
+     "contents": "read"
+    }
+   },
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Install validator dependency",
+     "run_file": "tools/tasks/steps/validate-hydrasafe.validate/01-install-validator-dependency.sh",
+     "run_sha256": "b77b4e758367adce4bd9743b79f06af8580099fe6726220e3c4a51ce4f9edae1"
+    },
+    {
+     "name": "Validate HydraSafe repository",
+     "run_file": "tools/tasks/steps/validate-hydrasafe.validate/02-validate-hydrasafe-repository.sh",
+     "run_sha256": "19760c4549c5c8835cf14de841407f51d79999aabb52cf1aa5a3b74d6d150a11"
+    },
+    {
+     "name": "Write validation receipt",
+     "run_file": "tools/tasks/steps/validate-hydrasafe.validate/03-write-validation-receipt.sh",
+     "run_sha256": "5f8c9fe6e3c374e3e6d5fc407e3fd0184273c51fc7538d3f73728c1e77cb3be4"
+    }
+   ],
+   "artifacts": [
+    {
+     "name": "hydrasafe-validation-receipt-${{ github.sha }}",
+     "path": "receipts/validation-receipt.json",
+     "if_no_files_found": "error",
+     "if": "success()"
+    }
+   ],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "true",
+    "timeout_minutes": 30,
+    "python_version": "3.12",
+    "artifact_name": "hydrasafe-validation-receipt",
+    "artifact_if_no_files_found": "error"
+   }
+  },
+  {
+   "id": "workflow-surface-registry.validate",
+   "catalog_addition": "G17 registry gate (no folded source workflow)",
+   "events": [
+    "pull_request",
+    "push"
+   ],
+   "env": {},
+   "steps": [
+    {
+     "name": "Workflow files equal the registered surfaces; catalog verifies ALLOW",
+     "run_file": "tools/tasks/steps/workflow-surface-registry.validate/01-registry.sh",
+     "run_sha256": "811824e88664923006be2eeb35632d710f5504145967f61632ad9e8fbdcb35ca"
+    }
+   ],
+   "artifacts": [],
+   "runner": {
+    "fetch_depth": "1",
+    "persist_credentials": "false",
+    "timeout_minutes": 10,
+    "python_version": "3.11"
+   }
+  }
+ ]
+}

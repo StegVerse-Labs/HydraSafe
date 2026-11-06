@@ -1,0 +1,1 @@
+python scripts/write_validation_receipt.py
